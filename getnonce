@@ -1,0 +1,11 @@
+echo Plug your iOS device into your Mac. Waiting 10 seconds.
+sleep 10
+read -p "Enter your UDID: " uniquedeviceid
+ideviceenterrecovery $uniquedeviceid
+echo  entering recovery. waiting 10 seconds
+sleep 10
+echo entered recovery. dumping NONC
+irecovery -q | grep NONC
+echo exiting recovery
+irecovery -n
+echo done
